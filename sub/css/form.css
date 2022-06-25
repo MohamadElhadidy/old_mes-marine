@@ -1,0 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Changa:wght@600&display=swap");
+body {
+  margin: 0;
+  direction: rtl;
+  padding: 0;
+  box-sizing: border-box;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+  font-family: "Changa", sans-serif !important;
+}
+.select2-selection{
+  right: 0px !important;
+}
+.selection{
+    right: 0px !important;
+}
+.center {
+  position: relative;
+  padding: 20px 50px;
+  background: #fff;
+  border-radius: 10px;
+}
+.center h1 {
+  font-size: 2em;
+  border-left: 5px solid dodgerblue;
+  padding: 10px;
+  color: #000;
+  letter-spacing: 5px;
+  margin-bottom: 60px;
+  font-weight: bold;
+  padding-left: 10px;
+}
+.center .inputbox {
+  position: relative;
+  /* width: 300px; */
+  height: 50px;
+  margin-bottom: 20px;
+}
+.center .inputbox input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  text-align: center;
+}
+.center .inputbox:last-child {
+  margin-bottom: 0;
+}
+.center .inputbox span {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 1em;
+  transition: 0.6s;
+}
+.center .inputbox input:focus ~ span,
+.center .inputbox input:valid ~ span {
+  transform: translateX(-13px) translateY(-35px);
+  font-size: 1em;
+}
+.center .inputbox [type="submit"] {
+  background: dodgerblue;
+  color: #fff;
+  border: #fff;
+  cursor: pointer;
+}
+.center .inputbox:hover [type="submit"] {
+  background: linear-gradient(45deg, greenyellow, dodgerblue);
+}
+.select2-search--dropdown .select2-search__field{
+  padding: 10px 4px !important;
+}
+.select2-results{
+  text-align: center;
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+  text-align: center;
+}
