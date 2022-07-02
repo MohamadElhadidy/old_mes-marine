@@ -95,7 +95,7 @@ $row1 = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM equipments WHERE id 
 
 <div class="container">
     <table style="margin-bottom:20px;">
-        <td>رقم المستند : <?php echo $order_num?></td>
+        <td>رقم المستند : <?php echo $row['order_num']?></td>
         <td>اسم المُعِدة : <?php echo $row1['code']; ?></td>
         <td>كود المُغِدة : <?php echo $row1['name']; ?></td>
         <td>التاريخ : <?php echo $row['order_date']; ?></td>
@@ -109,7 +109,7 @@ $row1 = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM equipments WHERE id 
                 <th>الإصلاحات</th>
                 <th>التكلفة</th>
                 <th>مُلاحظات</th>
-                <!-- <th class="print">#</th> -->
+                <th class="print">#</th>
             </tr>
         </thead>
         <tbody>
@@ -120,6 +120,8 @@ $row1 = mysqli_fetch_array(mysqli_query($con,"SELECT * FROM equipments WHERE id 
                 <td><?php echo $row["details"] ;?></td>
                 <td><?php echo number_format((float)$row["price"], 2, '.', '') ;?></td>
                 <td><?php echo $row["notes"] ;?></td>
+                <td class="print" ><a href="external_delete.php?id=<?php echo $row["id"] ;?>"  onclick="return confirm('هل أنت متأكد من عملية الحذف ؟')" class="btn btn-danger">حذف</a></td>
+
                 <!-- <td class="print" ><a href="enter_update.php?id=<?php echo $row2["id"] ;?> " class="btn btn-primary ">تعديل</a><a href="../../controllers/spares_store/enter_delete.php?id='.$row['id'].' " class="btn btn-danger   confirmation">حذف</a></td> -->
             </tr>
 	

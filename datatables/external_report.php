@@ -28,14 +28,14 @@ if($searchValue != ''){
 
 
 ## Total number of records without filtering
-$sel = "SELECT count(*) as allcount FROM external_spare_store  group by order_num";
+$sel = "SELECT count(*) as allcount FROM external_spare_store where is_delete = 0  group by order_num";
 $Records = mysqli_query($con, $sel);
 $totalRecords = 0 ;
 while($records = mysqli_fetch_assoc($Records))$totalRecords ++;
 
 
 ## Total number of record with filtering
-$sel = "SELECT count(*) as allcount FROM external_spare_store where   1  ".$searchQuery."  group by order_num ";
+$sel = "SELECT count(*) as allcount FROM external_spare_store where   is_delete = 0 AND 1  ".$searchQuery."  group by order_num ";
 $Records = mysqli_query($con, $sel);
 $totalRecordwithFilter = 0 ;
 while($records = mysqli_fetch_assoc($Records))$totalRecordwithFilter ++;
@@ -44,7 +44,7 @@ while($records = mysqli_fetch_assoc($Records))$totalRecordwithFilter ++;
 ## Fetch records
 
 
-$empQuery = "SELECT * FROM external_spare_store where  1  ".$searchQuery." group by order_num order by  order_num desc ".$columnName." ".$columnSortOrder."  ".$rowLength."" ; 
+$empQuery = "SELECT * FROM external_spare_store where  is_delete = 0 AND 1  ".$searchQuery." group by order_num order by  order_num desc ".$columnName." ".$columnSortOrder."  ".$rowLength."" ; 
    
 
 $empRecords = mysqli_query($con, $empQuery);
